@@ -1,0 +1,57 @@
+name: hyena
+channels:
+  - bioconda
+  - conda-forge
+  - nodefaults
+  - defaults
+dependencies:
+  - python==3.9
+  - ipykernel
+  - pytorch::pytorch=2.1
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - pytorch::torchtext
+  - pytorch::pytorch-cuda=11.8
+  - pytorch-lightning==1.8.6
+  - nvidia::cuda-nvcc=11.8
+  - cudatoolkit-dev=11.7
+  - gh
+  - git
+  - ca-certificates
+  - certifi
+  - openssl
+  - jupyterlab
+  - jupyter
+  - ipywidgets
+  - git-lfs
+  - torchinfo
+  - typer
+  - wandb
+  - polars
+  - pandas
+  - numpy
+  - numba
+  - hydra-core
+  - timm
+  - einops
+  - opt_einsum
+  - pyfaidx
+  - loguru
+  - omegaconf
+  - tqdm
+  - rich
+  - scikit-learn
+  - datasets
+  - transformers
+  - pysam
+  - pip
+  - cython
+  - tensorboard
+  - pip:
+    - genvarloader
+    - causal-conv1d==1.1.0
+    - mamba-ssm==1.1.0
+    - numerize
+    - liftover
+    - genomic-benchmarks
+    - datasets # LRA
