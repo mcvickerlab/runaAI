@@ -1,4 +1,4 @@
-# Dockerfiles for the Talmo Lab
+# Dockerfiles for the McVicker Lab
 
 This repository hosts a collection of Dockerfiles used for various projects in the Mcvicker Lab. Each Dockerfile is organized into its own directory, allowing for easy navigation and isolation of different container builds.
 
