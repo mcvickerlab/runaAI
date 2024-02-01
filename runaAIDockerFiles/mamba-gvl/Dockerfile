@@ -11,7 +11,17 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
 USER root
 
-RUN apt update --yes && apt install --yes build-essential
+RUN apt-get update --yes && apt-get install --yes build-essential \
+    git \
+    libxrender1 \
+    libgl1-mesa-dev \
+    libgl1-mesa-glx \
+    libglew-dev \
+    libosmesa6-dev \
+    xpra \
+    patchelf \
+    libglfw3-dev \
+    libglfw3
 
 USER ${NB_UID}
 
@@ -23,8 +33,8 @@ RUN mamba install --quiet --yes \
     fix-permissions "/home/${NB_USER}"
 
 # https://jupyter-docker-stacks.readthedocs.io/en/latest/using/recipes.html#add-a-python-3-x-environment
-ARG conda_env=python37
-ARG py_ver=3.7
+ARG conda_env=python39
+ARG py_ver=3.9
 
 # you can add additional libraries you want mamba to install by listing them below the first line and ending with "&& \"
 # RUN mamba create --quiet --yes -p "${CONDA_DIR}/envs/${conda_env}" python=${py_ver} ipython ipykernel && \
@@ -48,9 +58,11 @@ RUN "${CONDA_DIR}/envs/${conda_env}/bin/python" -m ipykernel install --user --na
 
 # any additional pip installs can be added by uncommenting the following line
 # RUN "${CONDA_DIR}/envs/${conda_env}/bin/pip" install tensorflow
+RUN #"${CONDA_DIR}/envs/${conda_env}/bin/pip" install tensorflow-probability==0.16.0
 
 # prepend conda environment to path
 ENV PATH "${CONDA_DIR}/envs/${conda_env}/bin:${PATH}"
+ENV LD_LIBRARY_PATH "${CONDA_DIR}/envs/${conda_env}/lib:${LD_LIBRARY_PATH}"
 
 # if you want this environment to be the default one, uncomment the following line:
 ENV CONDA_DEFAULT_ENV ${conda_env}
