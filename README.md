@@ -3,6 +3,15 @@
 ## Introduction
 Welcome to the McVicker Lab's guide for the [Run:ai Platform](https://www.run.ai/platform). This repository is dedicated to assisting members of our lab at the Salk Institute in maximizing the benefits of the Run:ai Platform for machine learning research. Here, you'll find resources tailored for various roles within our team, including administrators, researchers, and developers.
 
+**IMPORTANT: Accessing the Run:ai Platform**
+
+To access the Run:ai platform, please ensure the following steps are completed:
+
+1. **Connect to the VPN.** This is a prerequisite for accessing the Run:ai portal.
+2. **Follow the Installation Instructions.** Detailed setup instructions can be found on the McVicker Lab website: [Run:ai Setup Guide](https://sites.google.com/site/mcvickerlab/computing/run-ai-setup?authuser=0).
+3. **Log in to the Run:ai Portal.** Use your SSO credentials at [Salk Institute Run:ai Portal](https://salkinstitute.run.ai/).
+
+
 ## Table of Contents
 1. [For Run:ai Administrators](#for-runai-administrators)
 2. [For Researchers](#for-researchers)
