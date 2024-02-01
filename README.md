@@ -35,9 +35,8 @@ Welcome to the McVicker Lab's guide for the [Run:ai Platform](https://www.run.ai
 
 ## Building Custom Docker Containers
 This section guides you through the process of building custom Docker containers for use on the Run:ai Platform.
-
-- **Container Creation Guide**: Step-by-step instructions for Docker container development.
-- **Sample Dockerfiles**: Examples of Docker configurations for various projects.
+- **Container Creation Guide**: For detailed instructions and resources on building Docker containers, please visit our [Run:ai Docker Files Repository](https://github.com/mcvickerlab/runaAI/tree/master/runaAIDockerFiles).
+- **Sample Dockerfiles**: Explore our [Sample Mamba-GVL Dockerfile](https://github.com/mcvickerlab/runaAI/tree/master/runaAIDockerFiles/mamba-gvl) for an example of a custom container setup.
 
 ## Grid Search with CLI for Hyperparameter Optimization
 Leverage the power of grid search with the Run:ai CLI to optimize your machine learning models' hyperparameters.
