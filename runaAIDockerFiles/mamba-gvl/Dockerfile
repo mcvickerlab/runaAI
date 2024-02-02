@@ -11,7 +11,6 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
 USER root
 
-# Install dependencies required for building PyTorch
 RUN apt-get update --yes && apt-get install --yes build-essential \
     git \
     libxrender1 \
@@ -22,18 +21,7 @@ RUN apt-get update --yes && apt-get install --yes build-essential \
     xpra \
     patchelf \
     libglfw3-dev \
-    libglfw3 \
-    python3-dev \
-    cmake \
-    libopenblas-dev \
-    libblas-dev \
-    m4 \
-    cmake \
-    cython \
-    python3-yaml \
-    python3-setuptools \
-    python3-pip \
-    python3-numpy
+    libglfw3
 
 USER ${NB_UID}
 
@@ -68,23 +56,9 @@ RUN "${CONDA_DIR}/envs/${conda_env}/bin/python" -m ipykernel install --user --na
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 
-# Any additional pip installs can be added by uncommenting the following line
+# any additional pip installs can be added by uncommenting the following line
 # RUN "${CONDA_DIR}/envs/${conda_env}/bin/pip" install tensorflow
-
-# Build and install PyTorch with CUDA support
-WORKDIR /tmp
-RUN git clone --recursive https://github.com/pytorch/pytorch
-WORKDIR /tmp/pytorch
-
-# Checkout the desired branch/version compatible with CUDA 12.2
-# Example: using the master branch or a specific tag/commit
-RUN git checkout master
-
-RUN python setup.py install
-
-# Cleaning up the PyTorch build files
-WORKDIR /
-RUN rm -rf /tmp/pytorch
+RUN #"${CONDA_DIR}/envs/${conda_env}/bin/pip" install tensorflow-probability==0.16.0
 
 # prepend conda environment to path
 ENV PATH "${CONDA_DIR}/envs/${conda_env}/bin:${PATH}"
