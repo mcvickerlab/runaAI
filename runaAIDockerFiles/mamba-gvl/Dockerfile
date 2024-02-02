@@ -58,7 +58,6 @@ RUN "${CONDA_DIR}/envs/${conda_env}/bin/python" -m ipykernel install --user --na
 
 # any additional pip installs can be added by uncommenting the following line
 # RUN "${CONDA_DIR}/envs/${conda_env}/bin/pip" install tensorflow
-RUN #"${CONDA_DIR}/envs/${conda_env}/bin/pip" install tensorflow-probability==0.16.0
 
 # prepend conda environment to path
 ENV PATH "${CONDA_DIR}/envs/${conda_env}/bin:${PATH}"
