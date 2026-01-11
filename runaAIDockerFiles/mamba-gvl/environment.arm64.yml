@@ -1,0 +1,12 @@
+name: python39
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pytorch=2.0
+  - typer
+  - wandb
+  - jupyterlab
+  - jupyter
+  - pip

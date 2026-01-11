@@ -1,0 +1,25 @@
+name: python39
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pytorch=2.0
+  - pytorch-cuda=12.4
+  - nvidia::cuda-toolkit=12.4.0
+  - jax=0.4.26
+  - jaxlib=0.4.26
+  - typer
+  - wandb
+  - numpy
+  - numba
+  - polars
+  - pandas
+  - transformers
+  - jupyterlab
+  - jupyter
+  - pip
+  - pip:
+    - "jax[cuda12_pip]==0.4.26"
+    - git+https://github.com/instadeepai/nucleotide-transformer@main
